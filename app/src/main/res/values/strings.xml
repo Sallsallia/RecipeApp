@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">ResepApp</string>
+    <string name="title_home">Daftar Resep</string>
+    <string name="title_dashboard">Favorit</string>
+    <string name="title_notifications">Random Resep</string>
+    <string name="splash_screen_title">ResepApp</string>
+    <string name="image_contentDescription">image</string>
+    <string name="lbl_title">Judul</string>
+    <string name="lbl_type">Tipe</string>
+    <string name="lbl_category">Kategori</string>
+    <string name="lbl_ingredients">Komposisi</string>
+    <string name="lbl_cooking_time_in_minutes">Lama masak</string>
+    <string name="lbl_direction_to_cook">Step Memasak</string>
+    <string name="lbl_add_dish">Tambah Resep</string>
+    <string name="recipe_add">Tambahkan Resep</string>
+    <string name="title_select_image">Select Image Action</string>
+    <string name="lbl_camera">Camera</string>
+    <string name="lbl_gallery">Gallery</string>
+    <string name="rationale_camera">Aplikasi ini butuh akses ke kamera dan galery.</string>
+    <string name="err_msg_select_recipe_image">Pilih gambar.</string>
+    <string name="err_msg_enter_recipe_title">Masukkan nama resep.</string>
+    <string name="err_msg_select_recipe_type">Pilih tipe resep.</string>
+    <string name="err_msg_select_recipe_category">Pilih kategori.</string>
+    <string name="err_msg_enter_recipe_ingredients">Masukkan komposisi.</string>
+    <string name="err_msg_select_recipe_cooking_time">Pilih lama waktu masak.</string>
+    <string name="err_msg_enter_recipe_cooking_instructions">Masukkan instruksi.</string>
+    <string name="label_no_dishes_added_yet">Belum ada Resep untuk kategori ini!!!</string>
+    <string name="dish_resource_image_name">Dish Image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Detail resep fragment</string>
+    <string name="title_dish_details">Detail Resep</string>
+    <string name="lbl_estimate_cooking_time">Lama masak sekitar %1$s menit.</string>
+    <string name="cook_time_format">Lama masak sekitar %1$s menit.</string>
+    <string name="fav_dishes_fragment_label">Favorit belum ditambahkan</string>
+    <string name="action_edit_dish">Edit Resep</string>
+    <string name="action_delete_dish">Hapus resep</string>
+    <string name="edit_dish_title">Edit Resep</string>
+    <string name="lbl_update_dish">Update</string>
+    <string name="select_filter">Pilih Filter</string>
+</resources>

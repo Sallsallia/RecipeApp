@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?><!--TODO Step 2: Design the AddUpdateDishActivity screen using ConstraintLayout. -->
+<!--START-->
+
+
+<!-- induk layout menggunakan constrainlayout dengan lebar dan tinggi mengikuti layar-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.salsalia.salsalia.view.activities.AddUpdateRecipeActivity">
+
+<!-- menggunakan scroleview agar dapat di scroll
+        dengan lebar mengikuti lebar layar
+        tinggi layar 0dp
+        menyediakan ruangan view ful layout-->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--   menerapkan constrain layout
+       dengan lebar mengikuti lebar layar
+       tinggi mengikuti isi content yang
+       didalamnya-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--        Framelayout di gunakan untuk
+            membungkus img dan tombol upload gambar
+            dengan lebar mengikuti lebar layar
+            dan tinggi 200dp
+            sebagai parent posisi constraintlayout-->
+
+            <FrameLayout
+                android:id="@+id/fl_select_image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_200sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+<!--                imageview dengan id iv_dish_image-->
+<!--                dengan lebar dan tinggi mengikuti frameLayout-->
+<!--                dengan posisi yang presesisi-->
+<!--                diberi bg color yang-->
+<!--                diambil dari folder color-->
+                <ImageView
+                    android:id="@+id/iv_dish_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/dish_image_background"
+                    android:contentDescription="@string/image_contentDescription"
+                    android:scaleType="fitXY" />
+
+<!--                imgaeview untuk icon tambah gambar-->
+<!--                dengan panjang, lebar mengikuti -->
+<!--                ukuran icon-->
+<!--                dapat di click-->
+<!--                di beri posisi kiri bawah-->
+<!--                dengan padding 16dp-->
+<!--                icon di ambil dari folder dratable/ic_add_a_photo-->
+                <ImageView
+                    android:id="@+id/iv_add_dish_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|bottom"
+                    android:background="?selectableItemBackground"
+                    android:clickable="true"
+                    android:contentDescription="@string/image_contentDescription"
+                    android:focusable="true"
+                    android:padding="@dimen/_16sdp"
+                    android:src="@drawable/ic_add_a_photo" />
+            </FrameLayout>
+
+
+<!--            membuat desain textfield dari google material-->
+<!--            di beri id til_title-->
+<!--            style dari material Components menggunakan OutlinedBox-->
+<!--            dengan lebar mengikuti layar-->
+<!--            tinggi mengikuti kontent-->
+<!--            di beri jarak dari kiri 16dp-->
+<!--            atas 16dp, bawah 16dp,-->
+<!--            di beri text bayang "judul-->
+<!--            dengan warna biru, di posisikan di bawah framelyout-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_title"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_title"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/fl_select_image">
+
+<!--                membuat edit text dengan id et_title-->
+<!--                dengan lebar mengikuti layar-->
+<!--                dengan tinggi mengikuti tinggi content-->
+<!--                dengan input type text-->
+<!--                dengan ukuran text 15dp-->
+<!--                dan di beri warna abu" gelap -->
+                <EditText
+                    android:id="@+id/et_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!--            membuat desain textfield dari google material-->
+            <!--            di beri id til_type-->
+            <!--            style dari material Components menggunakan OutlinedBox-->
+            <!--            dengan lebar mengikuti layar-->
+            <!--            tinggi mengikuti kontent-->
+            <!--            di beri jarak dari kiri 16dp-->
+            <!--            atas 16dp, bawah 16dp,-->
+            <!--            di beri text bayang "Tipe-->
+            <!--            dengan warna biru, di posisikan di bawah til_title-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_type"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_type"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_title">
+                <!--  membuat edit text dengan id et_type-->
+                <!--  dengan lebar mengikuti layar-->
+                <!--  dengan tinggi mengikuti tinggi content-->
+                <!--  dengan input type text-->
+                <!--  dengan ukuran text 15dp-->
+                <!--  dan di beri warna abu" gelap -->
+
+                <EditText
+                    android:id="@+id/et_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="text"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--            membuat desain textfield dari google material-->
+            <!--            di beri id til_category-->
+            <!--            style dari material Components menggunakan OutlinedBox-->
+            <!--            dengan lebar mengikuti layar-->
+            <!--            tinggi mengikuti kontent-->
+            <!--            di beri jarak dari kiri 16dp-->
+            <!--            atas 16dp, bawah 16dp,-->
+            <!--            di beri text bayang "Tipe-->
+            <!--            dengan warna biru, di posisikan di bawah til_type-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_category"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_category"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_type">
+                <!--  membuat edit text dengan id et_category-->
+                <!--  dengan lebar mengikuti layar-->
+                <!--  dengan tinggi mengikuti tinggi content-->
+                <!--  dengan input type text-->
+                <!--  dengan ukuran text 15dp-->
+                <!--  dan di beri warna abu" gelap -->
+
+                <EditText
+                    android:id="@+id/et_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:inputType="text"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <!--            membuat desain textfield dari google material-->
+            <!--            di beri id til_ingredients-->
+            <!--            style dari material Components menggunakan OutlinedBox-->
+            <!--            dengan lebar mengikuti layar-->
+            <!--            tinggi mengikuti kontent-->
+            <!--            di beri jarak dari kiri 16dp-->
+            <!--            atas 16dp, bawah 16dp,-->
+            <!--            di beri text bayang "Tipe-->
+            <!--            dengan warna biru, di posisikan di bawah til_category-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_ingredients"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_ingredients"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_category">
+
+                <!--  membuat edit text dengan id et_ingredients-->
+                <!--  dengan lebar mengikuti layar-->
+                <!--  dengan tinggi mengikuti tinggi content-->
+                <!--  dengan input type textmultiline-->
+                <!--  dengan ukuran text 15dp-->
+                <!--  dan di beri warna abu" gelap -->
+                <!--  dengan minlines 5-->
+
+                <EditText
+                    android:id="@+id/et_ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:minLines="5"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <!-- membuat desain textfield dari google material-->
+            <!-- di beri id til_cooking_time-->
+            <!-- style dari material Components menggunakan OutlinedBox-->
+            <!-- dengan lebar mengikuti layar-->
+            <!-- tinggi mengikuti kontent-->
+            <!-- di beri jarak dari kiri 16dp-->
+            <!-- atas 16dp, bawah 16dp,-->
+            <!-- di beri text bayang "Tipe-->
+            <!-- dengan warna biru, di posisikan di bawah til_ingredient-->
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_cooking_time"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_cooking_time_in_minutes"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_ingredients">
+
+                <!--  membuat edit text dengan id et_cooking_time-->
+                <!--  dengan lebar mengikuti layar-->
+                <!--  dengan tinggi mengikuti tinggi content-->
+                <!--  dengan input type text-->
+                <!--  dengan ukuran text 15dp-->
+                <!--  dan di beri warna abu" gelap -->
+
+                <EditText
+                    android:id="@+id/et_cooking_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- membuat desain textfield dari google material-->
+            <!-- di beri id til_direction_to_cook-->
+            <!-- style dari material Components menggunakan OutlinedBox-->
+            <!-- dengan lebar mengikuti layar-->
+            <!-- tinggi mengikuti kontent-->
+            <!-- di beri jarak dari kiri 16dp-->
+            <!-- atas 16dp, bawah 16dp,-->
+            <!-- di beri text bayang "Tipe-->
+            <!-- dengan warna biru, di posisikan di bawah til_cooking_time-->
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_direction_to_cook"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:hint="@string/lbl_direction_to_cook"
+                app:hintTextColor="@color/blue_grey_700"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_cooking_time">
+
+                <!--  membuat edit text dengan id et_direction_to_cook-->
+                <!--  dengan lebar mengikuti layar-->
+                <!--  dengan tinggi 145-->
+                <!--  dengan input type text-->
+                <!--  dengan ukuran text 15dp-->
+                <!--  dan di beri warna abu" gelap -->
+                <EditText
+                    android:id="@+id/et_direction_to_cook"
+                    android:layout_width="match_parent"
+                    android:layout_height="145dp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:textColor="@color/primaryColor"
+                    android:textSize="@dimen/_15sdp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- button dengan-->
+            <!-- id btn_add_dish-->
+            <!-- tinggi mengikuti kontent-->
+            <!-- lebar mengikuti lebar layar-->
+            <!-- di posisikan di tengah-->
+            <!-- di beri jarak kiri 16dp, atas 20dp, kanan 20dp, bawah 20dp,-->
+            <!-- di posisikan di bawah til_direction_to_cook-->
+            <Button
+                android:id="@+id/btn_add_dish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/lbl_add_dish"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_direction_to_cook" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

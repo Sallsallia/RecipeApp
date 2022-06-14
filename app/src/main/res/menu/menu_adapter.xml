@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--    membuat 2 item untuk menjalan kan fungsi edit dan delet saat-->
+    <!--    aplikasi berjalan-->
+    <!--    item ini di beri id action_edit_dish-->
+    <!--    mengambil icon dari folder drawable/ic_add-->
+    <!--    diberi identitas 100 -->
+    <!--    memberi title Edit Resep-->
+    <item
+        android:id="@+id/action_edit_dish"
+        android:icon="@drawable/ic_add"
+        android:orderInCategory="100"
+        android:title="@string/action_edit_dish"
+        />
+
+    <!--    item ini di beri id action_delete_dish-->
+    <!--    mengambil icon dari folder drawable/ic_add-->
+    <!--    diberi identitas 101   -->
+    <!--    memberi title Hapus Resep-->
+    <item
+        android:id="@+id/action_delete_dish"
+        android:icon="@drawable/ic_add"
+        android:orderInCategory="101"
+        android:title="@string/action_delete_dish"
+        />
+</menu>

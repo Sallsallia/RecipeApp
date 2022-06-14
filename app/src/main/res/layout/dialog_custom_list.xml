@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--membuat dialog list-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_10sdp">
+
+
+    <!-- membuat judul menggunakan textview dengan id tv_title-->
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primaryColor"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Dialog Title" />
+
+    <!-- untuk menampilkan list item. menggunakan recyleview-->
+    <!-- dengan lebar mengikuti layar dan tinggi sesuai kontent-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="visible"
+        tools:visibility="visible" />
+</LinearLayout>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--membuat tampilan untuk menampilkan data resep makanan menggunakan cardView-->
+<!--membuat card dengan lebar sesuai lebar layar dan-->
+<!--tinggi sesuai isi kontent, di ijinkan dapat di clik dan di beri bayangan 5dp-->
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="5dp"
+    app:cardUseCompatPadding="true">
+
+    <!-- dengan susunan kebawah menggunakan linearLayout-->
+    <!-- dengan lebar sesuai lebar layar dan tinggi sesuai tinggi content-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- menggunakan frameLayout agar susunan layout dapat menumpuk ke depan-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!-- menampilkan image menggunakan imageView dengan id iv_dish_image-->
+            <!-- dengan lebar layar sesuai lebar-->
+            <!-- layar dan tinggi layar berukuran 120dp-->
+            <!-- memiliki margin 1dp-->
+            <ImageView
+                android:id="@+id/iv_dish_image"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_margin="1dp"
+                android:contentDescription="@string/dish_resource_image_name"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <!-- membuat icon more di atas gambar yang terletak di atas kanan layar-->
+            <!-- di beri id ib_more, di beri background transparan-->
+            <!-- icon di ambil dari folder drwabel/ic_more-->
+            <ImageView
+                android:id="@+id/ib_more"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:layout_margin="5dp"
+                android:background="@android:color/transparent"
+                android:foreground="?attr/selectableItemBackground"
+                android:src="@drawable/ic_more"
+                android:contentDescription="@string/dish_resource_image_name"
+                android:scaleType="fitXY" />
+        </FrameLayout>
+
+        <!-- membuat tulisan untuk titel resep menggunakan textView-->
+        <!-- dengan id tv_dish_title dengan lebar menyesuaikan card dan tinggi-->
+        <!-- menyesuaikan content di beri text Dish Title-->
+        <!-- memiliki margin 10dp, di posisikan center vertikal-->
+        <!-- dengan ukuran font 16sp dan style bold-->
+        <TextView
+            android:id="@+id/tv_dish_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center_vertical"
+            android:text="Dish Title"
+            android:textColor="@color/primaryColor"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

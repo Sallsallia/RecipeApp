@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- membuat 2 item untuk menjalan kan fungsi filter dan tambah saat-->
+    <!-- aplikasi berjalan-->
+
+    <!-- item ini di beri id action_filter_dish-->
+    <!-- mengambil icon dari folder drawable/ic_add-->
+    <!-- diberi identitas 100 -->
+    <!-- memberi title filter-->
+
+    <item
+        android:id="@+id/action_filter_dishes"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+        android:orderInCategory="100"
+        android:title="Filter"
+        app:showAsAction="ifRoom" />
+    <!-- item ini di beri id action_add_recipe-->
+    <!-- mengambil icon dari folder drawable/ic_add-->
+    <!-- diberi identitas 101   -->
+    <!-- memberi title tambah resep-->
+    <!-- selalu menampilkan -->
+    <item
+        android:id="@+id/action_add_recipe"
+        android:icon="@drawable/ic_add"
+        android:orderInCategory="101"
+        android:title="Tambah resep"
+        app:showAsAction="always" />
+</menu>

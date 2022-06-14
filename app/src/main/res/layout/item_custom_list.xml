@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <!-- membuat item value untuk menampilkan item list menggunakan textView-->
+    <!-- dengan id tv_text dengan lebar mengikuti lebar layar dan tinggi mengikuti-->
+    <!-- tinggi content, di beri background warna abu abu-->
+    <!-- di posisikan di tengah dengan pading 10dp-->
+    <!-- dengan ukuran font 16dp-->
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="@dimen/_10sdp"
+        android:textAllCaps="true"
+        android:textColor="@color/primaryColor"
+        android:textSize="@dimen/_16sdp"
+        tools:text="Item Value" />
+
+    <!-- membuat  garis dengan warna #e9e9e9 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#e9e9e9" />
+</LinearLayout>

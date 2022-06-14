@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- membuat 2 item  diantarnya item daftar resep dengan -->
+    <!-- id navigation_all_dishes-->
+    <!-- item favourite dengan id navigation_favourire_dishes-->
+
+    <item
+        android:id="@+id/navigation_all_dishes"
+        android:icon="@drawable/ic_all_dishes"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/navigation_favorite_dishes"
+        android:icon="@drawable/ic_favorite_dish"
+        android:title="@string/title_dashboard" />
+
+</menu>
